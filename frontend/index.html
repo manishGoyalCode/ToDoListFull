@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Todo App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Auth Section -->
+        <div id="authSection" class="auth-section">
+            <div class="auth-card">
+                <h1>📝 Simple Todo</h1>
+                <div class="auth-tabs">
+                    <button class="tab-btn active" onclick="showLogin()">Login</button>
+                    <button class="tab-btn" onclick="showSignup()">Signup</button>
+                </div>
+                
+                <!-- Login Form -->
+                <form id="loginForm" class="auth-form">
+                    <div class="form-group">
+                        <input type="text" id="loginUsername" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="loginPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Login</button>
+                    <div id="loginError" class="error-message"></div>
+                </form>
+                
+                <!-- Signup Form -->
+                <form id="signupForm" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <input type="text" id="signupUsername" placeholder="Username" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="signupPassword" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn-primary">Sign Up</button>
+                    <div id="signupError" class="error-message"></div>
+                </form>
+            </div>
+        </div>
+        
+        <!-- Todo Section -->
+        <div id="todoSection" class="todo-section" style="display: none;">
+            <div class="todo-header">
+                <h1>📝 My Todos</h1>
+                <div class="user-info">
+                    <span id="usernameDisplay"></span>
+                    <button onclick="logout()" class="btn-logout">Logout</button>
+                </div>
+            </div>
+            
+            <!-- Add Todo Form -->
+            <div class="add-todo-card">
+                <form id="addTodoForm">
+                    <input type="text" id="todoTitle" placeholder="What needs to be done?" required>
+                    <select id="todoStatus">
+                        <option value="Pending">Pending</option>
+                        <option value="In Progress">In Progress</option>
+                        <option value="Completed">Completed</option>
+                    </select>
+                    <button type="submit" class="btn-add">Add</button>
+                </form>
+            </div>
+            
+            <!-- Todos List -->
+            <div id="todosList" class="todos-list"></div>
+        </div>
+    </div>
+    
+    <script src="app.js"></script>
+</body>
+</html>
